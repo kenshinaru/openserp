@@ -18,7 +18,7 @@
     "@hono/zod-openapi": "^0.16.4",
     "dotenv": "^16.0.3",
     "hono": "^4.6.8",
-    "limiter": "^1.2.2",
+    "limiter": "latest",
     "playwright": "^1.30.0",
     "playwright-webextext": "^0.0.4",
     "swagger-jsdoc": "^6.2.8",
