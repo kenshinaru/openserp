@@ -1,24 +1,22 @@
-# Use the official Node.js image. mcr.microsoft.com/playwright
-FROM node:20
+FROM denoland/deno:2.0.4
 
-# Set the working directory.
-WORKDIR /usr/src/app
+# The port that your application listens to.
+EXPOSE 3000
 
-# Copy package.json and package-lock.json.
-COPY . .
+WORKDIR /app
 
-# Install dependencies.
-RUN npm install
 
-RUN npm run build
+# Cache the dependencies as a layer (the following two steps are re-run only when deps.ts is modified).
+# Ideally cache deps.ts will download and compile _all_ external files used in main.ts.
+RUN deno install 
 
-RUN npm install -g playwright
+RUN deno install -A --global npm:playwright
 
 RUN playwright install --with-deps
 
+# These steps will be re-run upon each file change in your working directory:
+COPY . .
+# Compile the main app so that it doesn't need to be compiled each startup/entry.
+# RUN deno cache src/index.ts
 
-# Expose the port your app runs on.
-EXPOSE 3000
-
-# Command to run your app.
-CMD ["node", "dist"]
+CMD ["deno","run", "-A", "src/index.ts"]

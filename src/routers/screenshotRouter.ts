@@ -1,6 +1,6 @@
-import { OpenAPIHono, createRoute, z } from '@hono/zod-openapi';
-import { BrowserContext } from 'playwright';
-import logger from '../utils/logger';
+import { OpenAPIHono, createRoute, z } from 'npm:@hono/zod-openapi';
+import { BrowserContext } from 'npm:playwright';
+import logger from '../utils/logger.ts';
 
 const screenshotRouter = new OpenAPIHono();
 

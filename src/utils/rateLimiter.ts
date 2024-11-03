@@ -3,9 +3,9 @@
  * @description Implements rate limiting to control the frequency of search requests.
  */
 
-import { RateLimiter } from 'limiter';
-import dotenv from 'dotenv';
-import { SearchProvider } from '../services/searchService';
+import { RateLimiter } from 'npm:limiter';
+import dotenv from 'npm:dotenv';
+import { SearchProvider } from '../services/searchService.ts';
 
 dotenv.config();
 

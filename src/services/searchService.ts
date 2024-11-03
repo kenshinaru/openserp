@@ -1,7 +1,7 @@
-import {  BrowserContext } from 'playwright';
-import { performGoogleSearch, SearchResult } from '../providers/google';
-import { performBaiduSearch } from '../providers/baidu';
-import { performYandexSearch } from '../providers/yandex';
+import {  BrowserContext } from 'npm:playwright';
+import { performGoogleSearch, SearchResult } from '../providers/google.ts';
+import { performBaiduSearch } from '../providers/baidu.ts';
+import { performYandexSearch } from '../providers/yandex.ts';
 
 /**
  * Enum for supported search providers.

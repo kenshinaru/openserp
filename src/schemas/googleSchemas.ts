@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from 'npm:zod';
 
 // Schema for Google Web Search
 export const googleSearchSchema = z.object({

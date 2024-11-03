@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from 'npm:zod';
 
 // Schema for Yandex Web Search
 export const yandexSearchSchema = z.object({

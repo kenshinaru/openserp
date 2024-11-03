@@ -1,6 +1,6 @@
-import { OpenAPIHono, createRoute, z } from '@hono/zod-openapi';
-import { SearchService, SearchProvider, SearchType } from '../services/searchService';
-import { BrowserContext } from 'playwright';
+import { OpenAPIHono, createRoute, z } from 'npm:@hono/zod-openapi';
+import { SearchService, SearchProvider, SearchType } from '../services/searchService.ts';
+import { BrowserContext } from 'npm:playwright';
 
   const baiduRouter = new OpenAPIHono();
 

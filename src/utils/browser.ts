@@ -3,8 +3,8 @@
  * @description Handles browser initialization and ensures a single instance is used.
  */
 
-import { firefox, Browser } from 'playwright';
-import logger from './logger';
+import { firefox, Browser } from 'npm:playwright';
+import logger from './logger.ts';
 
 let browser: Browser | null = null;
 

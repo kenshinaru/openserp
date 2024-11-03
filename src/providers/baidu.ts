@@ -3,7 +3,7 @@
  * @description Performs Baidu searches using Playwright with rate limiting.
  */
 
-import { BrowserContext, Page } from 'playwright';
+import { BrowserContext, Page } from 'npm:playwright';
 
 /**
  * Represents a search query.

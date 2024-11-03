@@ -11,4 +11,4 @@ services:
       - .:/usr/src/app
     environment:
       NODE_ENV: production
-    command: ["node", "dist"]
+    command: ["deno", "run", "-A", "src/index.ts"]

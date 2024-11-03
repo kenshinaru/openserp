@@ -3,19 +3,19 @@
  * @description Initializes a Playwright instance using Firefox to perform Google searches and serves an API with Swagger documentation.
  */
 
-import { firefox, Browser, BrowserContext } from 'playwright';
-import { performGoogleSearch } from './providers/google';
-import logger from './utils/logger';
-import dotenv from 'dotenv';
-import path from 'path';
-import { serve } from '@hono/node-server';
-import { OpenAPIHono } from '@hono/zod-openapi';
-import { swaggerUI } from '@hono/swagger-ui';
-import baidu from './routers/baiduRouter';
-import yandex from './routers/yandexRouter';
-import google from './routers/googleRouter';
-import screenshot from './routers/screenshotRouter';
-
+import { firefox, Browser, BrowserContext } from 'npm:playwright';
+import { performGoogleSearch } from './providers/google.ts';
+import logger from './utils/logger.ts';
+import dotenv from 'npm:dotenv';
+import path from 'node:path';
+import { serve } from 'npm:@hono/node-server';
+import { OpenAPIHono } from 'npm:@hono/zod-openapi';
+import { swaggerUI } from 'npm:@hono/swagger-ui';
+import baidu from './routers/baiduRouter.ts';
+import yandex from './routers/yandexRouter.ts';
+import google from './routers/googleRouter.ts';
+import screenshot from './routers/screenshotRouter.ts';
+const __dirname = path.resolve(import.meta.dirname);
 let _browser: Browser;
 let browser: BrowserContext;
 dotenv.config();
@@ -118,6 +118,7 @@ app.get('/doc', async (c) => {
         `);
 });
 
-serve(app, (info) => {
-    console.log(`Listening on http://localhost:${info.port}`);
-}); 
+Deno.serve({ port: 3000 }, app.fetch) 
+// serve(app, (info) => {
+//     console.log(`Listening on http://localhost:${info.port}`);
+// }); 

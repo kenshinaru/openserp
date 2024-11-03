@@ -3,7 +3,7 @@
  * @description Configures Winston logger for the application.
  */
 
-import { createLogger, format, transports } from 'winston';
+import { createLogger, format, transports } from 'npm:winston';
 
 const logger = createLogger({
   level: 'info',

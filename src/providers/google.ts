@@ -3,7 +3,7 @@
  * @description Performs Google searches using Playwright with rate limiting.
  */
 
-import { Browser, Page, BrowserContext } from 'playwright';
+import { Browser, Page, BrowserContext } from 'npm:playwright';
 
 /**
  * Represents a search query.

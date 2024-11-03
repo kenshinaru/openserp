@@ -1,7 +1,7 @@
-import { OpenAPIHono, createRoute, z } from '@hono/zod-openapi';
-import { SearchService, SearchProvider, SearchType } from '../services/searchService';
-import { Browser, BrowserContext } from 'playwright';
-import { Context } from 'hono';
+import { OpenAPIHono, createRoute, z } from 'npm:@hono/zod-openapi';
+import { SearchService, SearchProvider, SearchType } from '../services/searchService.ts';
+import { Browser, BrowserContext } from 'npm:playwright';
+import { Context } from 'npm:hono';
 
 const googleRouter = new OpenAPIHono();
 
