@@ -1,17 +1,21 @@
 # Use the official Node.js image. mcr.microsoft.com/playwright
-FROM mcr.microsoft.com/playwright
+FROM node:20
 
 # Set the working directory.
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json.
-COPY package*.json ./
+COPY . .
 
 # Install dependencies.
-RUN yarn
+RUN npm install
 
-# Copy the rest of your application code.
-COPY dist ./dist
+RUN npm run build
+
+RUN npm install -g playwright
+
+RUN playwright install --with-deps
+
 
 # Expose the port your app runs on.
 EXPOSE 3000
