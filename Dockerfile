@@ -1,5 +1,5 @@
-# Use the official Node.js image.
-FROM node:18
+# Use the official Node.js image. mcr.microsoft.com/playwright
+FROM mcr.microsoft.com/playwright
 
 # Set the working directory.
 WORKDIR /usr/src/app
