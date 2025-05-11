@@ -81,13 +81,13 @@ app.doc('/doc.json', {
     },
     servers: [
         {
-            url: 'http://localhost:3000',
+            url: 'http://localhost:7860',
         },
     ],
 });
 
 app.get('/doc', async (c) => {
-    const content = await fetch('http://localhost:3000/doc.json');
+    const content = await fetch('http://localhost:7860/doc.json');
     const data = await content.json();
     console.log(data);
     return c.html(`
@@ -118,7 +118,7 @@ app.get('/doc', async (c) => {
         `);
 });
 
-Deno.serve({ port: 3000 }, app.fetch) 
+Deno.serve({ port: 7860 }, app.fetch) 
 // serve(app, (info) => {
 //     console.log(`Listening on http://localhost:${info.port}`);
 // }); 
