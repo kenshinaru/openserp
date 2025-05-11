@@ -869,12 +869,12 @@ app.doc("/doc.json", {
   },
   servers: [
     {
-      url: "http://localhost:3000"
+      url: "http://localhost:7860"
     }
   ]
 });
 app.get("/doc", (c) => __async(exports, null, function* () {
-  const content = yield fetch("http://localhost:3000/doc.json");
+  const content = yield fetch("http://localhost:7860/doc.json");
   const data = yield content.json();
   console.log(data);
   return c.html(`
