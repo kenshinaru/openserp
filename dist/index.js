@@ -904,7 +904,11 @@ app.get("/doc", (c) => __async(exports, null, function* () {
         
         `);
 }));
-(0, import_node_server.serve)(app, (info) => {
+const PORT = process.env.PORT || 7860;
+(0, import_node_server.serve)({
+  fetch: app.fetch,
+  port: PORT
+}, (info) => {
   console.log(`Listening on http://localhost:${info.port}`);
 });
 //# sourceMappingURL=index.js.map
